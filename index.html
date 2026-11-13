@@ -2,6 +2,21 @@
 <html lang="pt-BR" data-lang="pt">
 <head>
 <meta charset="utf-8">
+<script>
+/* Idioma por localização: fuso horário do Brasil -> PT; qualquer outro lugar -> EN.
+   Escolha manual do visitante (botão PT/EN) tem prioridade e fica salva. */
+(function(){
+  var BR=["America/Sao_Paulo","America/Rio_Branco","America/Manaus","America/Porto_Velho","America/Boa_Vista","America/Eirunepe","America/Cuiaba","America/Campo_Grande","America/Belem","America/Santarem","America/Araguaina","America/Fortaleza","America/Recife","America/Maceio","America/Bahia","America/Noronha"];
+  var l=null; try{ l=localStorage.getItem("bmg-lang-choice"); }catch(e){}
+  if(l!=="pt"&&l!=="en"){
+    var tz=""; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""; }catch(e){}
+    if(tz){ l = BR.indexOf(tz)>-1 ? "pt" : "en"; }
+    else { l = /^pt-br/i.test(navigator.language||"") ? "pt" : "en"; }
+  }
+  var r=document.documentElement; r.setAttribute("data-lang",l); r.setAttribute("lang", l==="pt"?"pt-BR":"en"); window.__BMG_LANG=l;
+})();
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bridge Media Group</title>
 <meta name="description" content="Bridge Media Group desenvolve, protege e comercializa propriedades audiovisuais do esporte para clubes, atletas, marcas, plataformas e investidores.">
@@ -622,12 +637,10 @@ footer p{font-size:13px;color:var(--muted);max-width:70ch}
       if (el.tagName === "OPTION") el.textContent = v; else el.setAttribute("placeholder", v);
     });
     ["aria-label","alt"].forEach(function(a){ document.querySelectorAll("[data-" + a + "-" + l + "]").forEach(function(el){ el.setAttribute(a, el.getAttribute("data-" + a + "-" + l)); }); });
-    try { localStorage.setItem("bmg-lang", l); } catch(e){}
     renderAud(current);
   }
-  var saved = null; try { saved = localStorage.getItem("bmg-lang"); } catch(e){}
-  var initial = saved || ((navigator.language || "pt").toLowerCase().indexOf("pt") === 0 ? "pt" : "en");
-  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.set); }); });
+  var initial = window.__BMG_LANG || "en";
+  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ try { localStorage.setItem("bmg-lang-choice", b.dataset.set); } catch(e){} setLang(b.dataset.set); }); });
   function L(){ return root.getAttribute("data-lang") || "pt"; }
 
   /* ---------- audience selector ---------- */
