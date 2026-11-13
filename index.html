@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bridge Media Group</title>
+<meta name="description" content="Bridge Media Group desenvolve, protege e comercializa propriedades audiovisuais do esporte para clubes, atletas, marcas, plataformas e investidores.">
+<meta property="og:title" content="Bridge Media Group · Sports IP, Storytelling & Commercial Value">
+<meta property="og:description" content="Bridge Media Group desenvolve, protege e comercializa propriedades audiovisuais do esporte para clubes, atletas, marcas, plataformas e investidores.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#15171B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 108 108'%3E%3Crect x='6' y='6' width='108' height='108' fill='%2315171B'/%3E%3Cpath d='M104 51V80A24 24 0 0 1 80 104H40A24 24 0 0 1 16 80V40A24 24 0 0 1 40 16H69' fill='none' stroke='%23F4F5F7' stroke-width='20'/%3E%3Cpath d='M78 16H80A24 24 0 0 1 104 40V42' fill='none' stroke='%23B8975A' stroke-width='20'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<style>
+/* Layout: graphite editorial page, wide 12-col grid; hero = animated Corner Joint over a field photo; one mist band for the audience selector; gold used only as the "joint" accent */
+:root{
+  --ink:#15171B; --ink-2:#1C1F24; --ink-3:#24282E; --line:#30353C;
+  --fg:#F4F5F7; --fg-2:#C9CDD2; --muted:#959BA4;
+  --gold:#B8975A; --gold-ink:#8A6D33; --mist:#ECEDEF; --mist-2:#F7F7F8; --mist-line:#D6D9DD; --ink-on-mist:#15171B; --muted-on-mist:#555B64;
+  --f-display:'Archivo', 'Arial Narrow', Arial, sans-serif;
+  --f-body:'Archivo', Arial, Helvetica, sans-serif;
+  --f-mono:'IBM Plex Mono', 'Courier New', monospace;
+  --wrap:1240px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--ink);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+h1,h2,h3,h4,p{margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance}
+a{color:inherit}
+img{max-width:100%;display:block}
+html[data-lang="pt"] [data-l="en"],html[data-lang="en"] [data-l="pt"]{display:none!important}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.mono{font-family:var(--f-mono)}
+.section{padding-block:104px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-size:clamp(34px,4.4vw,58px);line-height:1.02;font-weight:800;font-stretch:108%;letter-spacing:-.02em}
+.sec-head p{color:var(--fg-2);max-width:56ch}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:700;font-size:15px;letter-spacing:.02em;padding:15px 22px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#C9A86A}
+.btn-line{border-color:var(--line);color:var(--fg)}
+.btn-line:hover{border-color:var(--fg-2)}
+.btn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.arrow{width:16px;height:16px}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(21,23,27,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand svg{width:30px;height:30px}
+.brand span{font-family:var(--f-display);font-weight:800;font-stretch:112%;font-size:15px;letter-spacing:.16em}
+.nav-links{display:flex;gap:24px;margin-left:auto}
+.nav-links a{font-size:14px;color:var(--fg-2);text-decoration:none}
+.nav-links a:hover{color:var(--fg)}
+.lang{display:flex;border:1px solid var(--line)}
+.lang button{background:none;border:0;color:var(--muted);font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;padding:8px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--ink)}
+.nav .btn{padding:11px 16px;font-size:14px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-photo{position:absolute;inset:0 0 0 38%;background:url(assets/hero.jpg) center/cover no-repeat}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,rgba(21,23,27,.88) 22%,rgba(21,23,27,.35) 62%,rgba(21,23,27,.55) 100%)}
+.hero .wrap{position:relative;padding-block:88px 72px;display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.lockup{display:flex;align-items:center;gap:26px}
+.mark{width:112px;height:112px;flex-shrink:0;overflow:visible}
+.mark .ring{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.15s cubic-bezier(.75,0,.2,1) .2s forwards}
+.mark .joint{opacity:0;transform:translate(14px,-14px);transform-origin:90px 30px;animation:snap .5s cubic-bezier(.2,1.4,.4,1) 1.25s forwards}
+.mark .flash{opacity:0;animation:flash .9s ease-out 1.55s forwards}
+.wordmark{display:flex;flex-direction:column;gap:8px}
+.wordmark b{font-family:var(--f-display);font-weight:800;font-stretch:118%;font-size:clamp(22px,2.6vw,30px);letter-spacing:.5em;opacity:0;animation:track 1.1s cubic-bezier(.2,.8,.2,1) 1.1s forwards;white-space:nowrap}
+.wordmark i{font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.22em;color:var(--fg-2);text-transform:uppercase;opacity:0;animation:fade .8s ease 1.7s forwards}
+.seam{height:2px;width:min(520px,100%);background:var(--gold);transform-origin:left;transform:scaleX(0);animation:seam .9s cubic-bezier(.7,0,.2,1) 1.6s forwards}
+.hero h1{font-size:clamp(40px,6.4vw,88px);line-height:.98;font-weight:850;font-stretch:112%;letter-spacing:-.03em;max-width:13ch;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) 1.85s forwards}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{font-size:clamp(17px,1.5vw,20px);color:var(--fg-2);max-width:54ch;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) 2s forwards}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) 2.1s forwards}
+.audience-chips{display:flex;flex-wrap:wrap;gap:8px;opacity:0;animation:fade 1s ease 2.3s forwards}
+.audience-chips a{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border:1px solid var(--line);background:rgba(21,23,27,.6);text-decoration:none;color:var(--fg-2)}
+.audience-chips a:hover{border-color:var(--gold);color:var(--fg)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes snap{to{opacity:1;transform:none}}
+@keyframes flash{0%{opacity:.9}100%{opacity:0}}
+@keyframes track{to{opacity:1;letter-spacing:.18em}}
+@keyframes fade{to{opacity:1}}
+@keyframes seam{to{transform:scaleX(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .mark .ring,.mark .joint,.mark .flash,.wordmark b,.wordmark i,.seam,.hero h1,.hero .lead,.hero .ctas,.audience-chips{animation:none!important;opacity:1!important;transform:none!important;stroke-dashoffset:0!important}
+  .wordmark b{letter-spacing:.18em}.mark .flash{opacity:0!important}
+}
+
+/* PROOF BAND */
+.proof{border-bottom:1px solid var(--line);background:var(--ink-2)}
+.proof .wrap{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.stat{padding:30px 20px 28px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{font-family:var(--f-display);font-size:clamp(24px,2.5vw,34px);overflow-wrap:anywhere;font-weight:800;font-stretch:110%;line-height:1;font-variant-numeric:tabular-nums}
+.stat b.g{color:var(--gold)}
+.stat span{font-size:14px;line-height:1.35;color:var(--fg-2)}
+
+/* THESIS */
+.thesis-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:20px}
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line)}
+.flow > div{background:var(--ink-2);padding:28px 24px;display:flex;flex-direction:column;gap:14px}
+.flow > div.out{background:var(--gold);color:var(--ink)}
+.flow h3{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.flow .out h3{color:var(--ink)}
+.flow ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.flow li{border-top:1px solid var(--line);padding-top:12px;font-size:16px;line-height:1.4}
+.flow .out li{border-color:rgba(21,23,27,.25)}
+.flow li strong{display:block;font-size:17px}
+.example{grid-column:1/2;border-top:2px solid var(--gold);padding-top:20px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 24px;align-items:baseline}
+.example p{font-size:clamp(19px,1.8vw,24px);line-height:1.35}
+.thesis-photo{grid-row:1/3;grid-column:2/3;position:relative;min-height:420px;background:var(--ink-3) center/cover no-repeat}
+.corner::before,.corner::after{content:"";position:absolute;right:16px;top:16px;background:var(--gold);z-index:2}
+.corner::before{width:48px;height:6px}.corner::after{width:6px;height:48px}
+
+/* AUDIENCE */
+.band-mist{background:var(--mist);color:var(--ink-on-mist)}
+.band-mist .eyebrow{color:var(--gold-ink)}
+.band-mist .sec-head p{color:var(--muted-on-mist)}
+.aud{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:24px;align-items:start}
+.aud-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.aud-list button{text-align:left;background:var(--mist-2);border:1px solid var(--mist-line);padding:16px 16px 14px;cursor:pointer;font-family:var(--f-body);color:var(--ink-on-mist);display:flex;flex-direction:column;gap:4px;transition:border-color .2s,background .2s}
+.aud-list button small{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--muted-on-mist);text-transform:uppercase}
+.aud-list button b{font-size:17px;line-height:1.2}
+.aud-list button:hover{border-color:var(--ink-on-mist)}
+.aud-list button[aria-selected="true"]{background:var(--ink);color:var(--fg);border-color:var(--ink)}
+.aud-list button[aria-selected="true"] small{color:var(--gold)}
+.aud-panel{background:var(--ink);color:var(--fg);padding:40px;display:flex;flex-direction:column;gap:22px;position:relative;min-height:100%}
+.aud-panel h3{font-size:clamp(26px,2.6vw,36px);line-height:1.08;font-weight:800;font-stretch:108%;letter-spacing:-.01em;max-width:22ch}
+.aud-panel ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.aud-panel li{border-top:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;font-size:17px;color:var(--fg-2)}
+.aud-panel li::before{content:"";width:14px;height:14px;border-top:3px solid var(--gold);border-right:3px solid var(--gold);margin-top:5px}
+.aud-meta{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px}
+.aud-meta .mono{font-size:13px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.aud-meta .mono b{color:var(--fg);font-weight:500}
+.aud-note{font-size:13px;color:var(--muted)}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+.pillar{background:var(--ink);padding:30px 26px 32px;display:flex;flex-direction:column;gap:14px}
+.pillar .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--gold)}
+.pillar h3{font-size:24px;line-height:1.1;font-weight:800;font-stretch:106%}
+.pillar p{font-size:15px;color:var(--fg-2)}
+.pillar .tags{margin-top:auto;font-family:var(--f-mono);font-size:12px;line-height:1.7;color:var(--muted);letter-spacing:.04em}
+
+/* CASES */
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:12px}
+.case{position:relative;overflow:hidden;background:var(--ink-3);display:flex;flex-direction:column;justify-content:flex-end;padding:26px;min-height:320px;isolation:isolate}
+.case > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.case::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,23,27,0) 20%,rgba(21,23,27,.55) 55%,rgba(21,23,27,.94) 100%)}
+.case:hover > img{transform:scale(1.04)}
+.case .tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.case h3{font-size:clamp(24px,2.4vw,34px);line-height:1.04;font-weight:800;font-stretch:108%;margin-bottom:8px}
+.case p{font-size:15px;color:var(--fg-2);max-width:48ch}
+.kpis{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(244,245,247,.18)}
+.kpis div{display:flex;flex-direction:column}
+.kpis b{font-family:var(--f-display);font-size:24px;font-weight:800;font-stretch:110%;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpis span{font-size:12px;color:var(--fg-2);font-family:var(--f-mono);letter-spacing:.04em}
+.c-doze{grid-column:span 7;min-height:520px}
+.c-bravo{grid-column:span 5;min-height:520px}
+.c-versus{grid-column:span 5;min-height:440px}
+.c-copa{grid-column:span 7;min-height:440px}
+.c-antony{grid-column:span 6}
+.c-cairo{grid-column:span 6}
+.cases-note{margin-top:18px;font-size:13px;color:var(--muted)}
+
+/* TRACK RECORD */
+.wall{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px 40px}
+.wall h3{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:14px}
+.tiles{display:grid;gap:8px}
+.tiles.b{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tiles.m{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tiles span{border:1px solid var(--line);min-height:62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 10px;font-family:var(--f-display);font-weight:800;font-stretch:110%;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-2)}
+.athletes{grid-column:1/-1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0 20px}
+.athletes h3{grid-column:1/-1}
+.athletes p{border-top:1px solid var(--line);padding:12px 0;font-weight:700;font-size:16px;line-height:1.25}
+.athletes p small{display:block;font-family:var(--f-mono);font-weight:400;font-size:11px;color:var(--muted);letter-spacing:.1em;margin-top:2px}
+.wall-note{grid-column:1/-1;font-size:13px;color:var(--muted)}
+
+/* MODELS + LIFECYCLE */
+.models-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px}
+.models{display:flex;flex-direction:column}
+.model{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 18px;padding:20px 0;border-top:1px solid var(--line)}
+.model:last-child{border-bottom:1px solid var(--line)}
+.model > b{grid-row:1/3;font-family:var(--f-display);font-size:30px;font-weight:800;color:var(--gold);line-height:1}
+.model h3{font-size:20px;font-weight:800;line-height:1.2}
+.model p{font-size:15px;color:var(--fg-2)}
+.life{display:flex;flex-direction:column;gap:0;counter-reset:s}
+.life h3{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:14px}
+.step{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;position:relative;padding-bottom:22px}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--f-mono);font-size:13px;color:var(--gold);border:1px solid var(--line);height:40px;display:flex;align-items:center;justify-content:center;background:var(--ink)}
+.step::after{content:"";position:absolute;left:27px;top:40px;bottom:0;width:1px;background:var(--line)}
+.step:last-child::after{display:none}
+.step b{display:block;font-size:18px;line-height:1.2;padding-top:8px}
+.step span{font-size:15px;color:var(--fg-2)}
+.step.last::before{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* FOUNDER */
+.founder{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:center}
+.founder-photo{position:relative;aspect-ratio:4/5;max-width:100%;background:var(--ink-3)}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.founder h2{font-size:clamp(32px,4vw,52px);line-height:1.02;font-weight:800;font-stretch:108%;letter-spacing:-.02em;margin:14px 0 20px}
+.founder p{color:var(--fg-2);max-width:60ch}
+.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.timeline div{border-top:2px solid var(--line);padding-top:12px}
+.timeline div:last-child{border-color:var(--gold)}
+.timeline small{font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.08em}
+.timeline b{display:block;font-size:17px;line-height:1.3;margin-top:4px}
+
+/* CONTACT */
+.contact{background:var(--ink-2);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px}
+.contact h2{font-size:clamp(34px,4.4vw,58px);line-height:1.02;font-weight:800;font-stretch:108%;letter-spacing:-.02em;margin:14px 0 20px}
+.contact .intro p{color:var(--fg-2);max-width:46ch}
+.next{list-style:none;margin:32px 0 0;padding:0;display:flex;flex-direction:column}
+.next li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--fg-2)}
+.next li > span{font-family:var(--f-mono);color:var(--gold);font-size:13px;padding-top:2px}
+.next li b{color:var(--fg);display:block;font-size:16px}
+.direct{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.direct code{font-family:var(--f-mono);font-size:14px;padding:10px 12px;border:1px solid var(--line);user-select:all;word-break:break-all}
+.direct button{background:none;border:1px solid var(--line);color:var(--fg-2);font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;padding:11px 12px;cursor:pointer}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 16px;background:var(--ink);border:1px solid var(--line);padding:32px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
+label i{font-style:normal;color:var(--gold)}
+input,select,textarea{font-family:var(--f-body);font-size:16px;color:var(--fg);background:var(--ink-2);border:1px solid var(--line);padding:13px 14px;border-radius:0;width:100%;min-width:0}
+textarea{min-height:130px;resize:vertical}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--fg-2) 50%),linear-gradient(135deg,var(--fg-2) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+input:hover,select:hover,textarea:hover{border-color:#4A5059}
+.field.err input,.field.err select,.field.err textarea{border-color:#E0715A}
+.field .msg{font-size:13px;color:#F0937F;min-height:0}
+.consent{grid-column:1/-1;font-family:var(--f-body);text-transform:none;letter-spacing:0;line-height:1.45;display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px;align-items:start;font-size:14px;color:var(--fg-2)}
+.consent input{width:18px;height:18px;padding:0;margin-top:2px;accent-color:var(--gold)}
+.consent.err{color:#F0937F}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.form-foot small{font-size:13px;color:var(--muted);max-width:46ch}
+.btn[disabled]{opacity:.6;cursor:progress}
+.status{grid-column:1/-1;padding:18px 20px;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px;font-size:15px}
+.status.ok{border-color:var(--gold);background:rgba(184,151,90,.08)}
+.status.fail{border-color:#E0715A;background:rgba(224,113,90,.07)}
+.status b{font-size:17px}
+.status textarea{min-height:110px;font-family:var(--f-mono);font-size:13px}
+.status .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding-block:40px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start}
+footer p{font-size:13px;color:var(--muted);max-width:70ch}
+
+/* RESPONSIVE */
+@media (max-width:1080px){
+  .nav-links{display:none}
+  .proof .wrap{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stat:nth-child(4){border-left:0;padding-left:0}
+  .stat:nth-child(n+4){border-top:1px solid var(--line)}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .athletes{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .thesis-grid{grid-template-columns:minmax(0,1fr)}
+  .thesis-photo{grid-row:auto;grid-column:auto;min-height:300px}
+  .example{grid-column:auto}
+}
+@media (max-width:860px){
+  .section{padding-block:72px}
+  .sec-head,.aud,.models-grid,.founder,.contact-grid,.wall{grid-template-columns:minmax(0,1fr)}
+  .hero-photo{inset:0}
+  .hero-photo::after{background:linear-gradient(180deg,rgba(21,23,27,.82),rgba(21,23,27,.92))}
+  .flow{grid-template-columns:minmax(0,1fr)}
+  .bento > .case{grid-column:1/-1;min-height:380px}
+  .founder-photo{max-width:420px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .nav .btn{display:none}
+  .brand span{font-size:13px;letter-spacing:.12em}
+  .mark{width:76px;height:76px}
+  .lockup{gap:16px}
+  .wordmark b{font-size:17px}
+  .wordmark b{white-space:normal}
+  .proof .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat{padding:22px 14px}
+  .stat:nth-child(odd){border-left:0;padding-left:0}
+  .stat:nth-child(4){border-left:1px solid var(--line);padding-left:14px}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .pillars,.aud-list,.tiles.b{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .athletes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aud-panel{padding:26px 20px}
+  form{grid-template-columns:minmax(0,1fr);padding:22px 18px}
+  .timeline{grid-template-columns:minmax(0,1fr)}
+  .example{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bridge Media Group">
+      <svg viewBox="6 6 108 108" aria-hidden="true"><path d="M104 51V80A24 24 0 0 1 80 104H40A24 24 0 0 1 16 80V40A24 24 0 0 1 40 16H69" fill="none" stroke="#F4F5F7" stroke-width="20"/><path d="M78 16H80A24 24 0 0 1 104 40V42" fill="none" stroke="#B8975A" stroke-width="20"/></svg>
+      <span>BRIDGE</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal" data-aria-label-pt="Principal" data-aria-label-en="Main">
+      <a href="#tese"><span data-l="pt">Tese</span><span data-l="en">Thesis</span></a>
+      <a href="#para-quem"><span data-l="pt">Para quem</span><span data-l="en">Who it’s for</span></a>
+      <a href="#cases">Cases</a>
+      <a href="#modelos"><span data-l="pt">Modelos</span><span data-l="en">Models</span></a>
+      <a href="#fundador"><span data-l="pt">Fundador</span><span data-l="en">Founder</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma" data-aria-label-pt="Idioma" data-aria-label-en="Language">
+      <button type="button" id="lang-pt" data-set="pt" aria-pressed="true">PT</button>
+      <button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-gold" href="#contato"><span data-l="pt">Iniciar conversa</span><span data-l="en">Start a conversation</span></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-photo" role="img" aria-label="Equipe de produção e atletas em campo ao pôr do sol, durante o BRAVO!" data-aria-label-pt="Equipe de produção e atletas em campo ao pôr do sol, durante o BRAVO!" data-aria-label-en="Production crew and players on the pitch at sunset during BRAVO!"></div>
+  <div class="wrap">
+    <div class="lockup">
+      <svg class="mark" viewBox="8 8 104 104" aria-hidden="true">
+        <path class="ring" pathLength="1" d="M104 49V80A24 24 0 0 1 80 104H40A24 24 0 0 1 16 80V40A24 24 0 0 1 40 16H71" fill="none" stroke="#F4F5F7" stroke-width="16"/>
+        <path class="joint" d="M76 16H80A24 24 0 0 1 104 40V44" fill="none" stroke="#B8975A" stroke-width="16"/>
+        <circle class="flash" cx="92" cy="28" r="22" fill="#B8975A"/>
+      </svg>
+      <div class="wordmark">
+        <b>BRIDGE MEDIA GROUP</b>
+        <i>Sports IP · Storytelling · Commercial Value</i>
+      </div>
+    </div>
+    <div class="seam" aria-hidden="true"></div>
+    <h1 id="hero-title"><span data-l="pt">Histórias do esporte viram ativos. <em>Ativos viram receita.</em></span><span data-l="en">Sports stories become assets. <em>Assets become revenue.</em></span></h1>
+    <p class="lead"><span data-l="pt">Desenvolvemos, protegemos e comercializamos propriedades audiovisuais do esporte para clubes, atletas, marcas, plataformas e investidores. Da primeira ideia ao contrato de licenciamento.</span><span data-l="en">We develop, protect and commercialize sports audiovisual properties for clubs, athletes, brands, platforms and investors. From the first idea to the licensing deal.</span></p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="#contato"><span data-l="pt">Propor uma parceria</span><span data-l="en">Propose a partnership</span> <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      <a class="btn btn-line" href="#cases"><span data-l="pt">Ver cases</span><span data-l="en">See the work</span></a>
+    </div>
+    <div class="audience-chips" aria-label="Para quem" data-aria-label-pt="Para quem" data-aria-label-en="Who it’s for">
+      <a href="#para-quem" data-aud="investors"><span data-l="pt">Investidores</span><span data-l="en">Investors</span></a>
+      <a href="#para-quem" data-aud="clubs"><span data-l="pt">Clubes</span><span data-l="en">Clubs</span></a>
+      <a href="#para-quem" data-aud="athletes"><span data-l="pt">Atletas</span><span data-l="en">Athletes</span></a>
+      <a href="#para-quem" data-aud="agents"><span data-l="pt">Agentes</span><span data-l="en">Agents</span></a>
+      <a href="#para-quem" data-aud="brands"><span data-l="pt">Marcas</span><span data-l="en">Brands</span></a>
+      <a href="#para-quem" data-aud="producers"><span data-l="pt">Produtoras</span><span data-l="en">Producers</span></a>
+      <a href="#para-quem" data-aud="media"><span data-l="pt">Veículos</span><span data-l="en">Broadcasters</span></a>
+      <a href="#para-quem" data-aud="streaming">Streaming</a>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="Números da trajetória" data-aria-label-pt="Números da trajetória" data-aria-label-en="Track record in numbers">
+  <div class="wrap">
+    <div class="stat"><b class="g">18M+</b><span><span data-l="pt">espectadores da série DOZE, 100% orgânico</span><span data-l="en">viewers of the DOZE series, 100% organic</span></span></div>
+    <div class="stat"><b>150+</b><span><span data-l="pt">países alcançados pela DOZE</span><span data-l="en">countries reached by DOZE</span></span></div>
+    <div class="stat"><b>CINEfoot</b><span><span data-l="pt">melhor curta de futebol, VERSUS (DAZN)</span><span data-l="en">best football short, VERSUS (DAZN)</span></span></div>
+    <div class="stat"><b>#1</b><span><span data-l="pt">programa mais visto da DAZN fora do ao vivo, na época</span><span data-l="en">DAZN’s most-watched show outside live, at the time</span></span></div>
+    <div class="stat"><b>10</b><span><span data-l="pt">episódios exclusivos do BRAVO! na ESPN</span><span data-l="en">exclusive BRAVO! episodes on ESPN</span></span></div>
+    <div class="stat"><b>91</b><span><span data-l="pt">profissionais no set do BRAVO!, com 13 câmeras</span><span data-l="en">crew on the BRAVO! set, with 13 cameras</span></span></div>
+  </div>
+</section>
+
+<section class="section" id="tese" aria-labelledby="tese-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span data-l="pt">A tese</span><span data-l="en">The thesis</span></p><h2 id="tese-title"><span data-l="pt">Todo detentor de direitos já é dono de mídia.</span><span data-l="en">Every rights holder is already a media owner.</span></h2></div>
+      <p><span data-l="pt">O passado de um clube, a carreira de um atleta e o dia a dia de vitórias são matéria-prima. Com proteção de direitos e estratégia de IP, viram produtos que se vendem por anos, não por uma temporada.</span><span data-l="en">A club’s past, an athlete’s career and the daily routine of winning are raw material. With rights protection and an IP strategy, they become products that sell for years, not for one season.</span></p>
+    </div>
+    <div class="thesis-grid">
+      <div class="flow">
+        <div>
+          <h3><span data-l="pt">Matéria-prima</span><span data-l="en">Raw material</span></h3>
+          <ul>
+            <li><strong><span data-l="pt">O passado</span><span data-l="en">The past</span></strong><span data-l="pt">Títulos, ídolos, acervo e jogos históricos.</span><span data-l="en">Titles, idols, archives and historic matches.</span></li>
+            <li><strong><span data-l="pt">O presente</span><span data-l="en">The present</span></strong><span data-l="pt">Treinos, dias de jogo, jogadores e torcida.</span><span data-l="en">Training, matchdays, players and supporters.</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Bridge</h3>
+          <ul>
+            <li><strong><span data-l="pt">Protege</span><span data-l="en">Protects</span></strong><span data-l="pt">Cadeia de direitos, imagem, marca, título e formato registrados.</span><span data-l="en">Rights chain, image, brand, title and format registered.</span></li>
+            <li><strong><span data-l="pt">Cria</span><span data-l="en">Creates</span></strong><span data-l="pt">Formatos, séries e franquias desenhados como IP.</span><span data-l="en">Formats, series and franchises designed as IP.</span></li>
+          </ul>
+        </div>
+        <div class="out">
+          <h3><span data-l="pt">Ativo comercial</span><span data-l="en">Commercial asset</span></h3>
+          <ul>
+            <li><strong><span data-l="pt">Licenciamento</span><span data-l="en">Licensing</span></strong><span data-l="pt">Programas vendidos a emissoras e plataformas.</span><span data-l="en">Shows sold to broadcasters and platforms.</span></li>
+            <li><strong><span data-l="pt">Receitas extras</span><span data-l="en">Added revenue</span></strong><span data-l="pt">Patrocínio integrado, vendas internacionais, produtos para sócios.</span><span data-l="en">Integrated sponsorship, international sales, member products.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="thesis-photo corner" style="background-image:url(assets/stadium-night.jpg)" role="img" aria-label="Vista aérea do Maracanã iluminado à noite" data-aria-label-pt="Vista aérea do Maracanã iluminado à noite" data-aria-label-en="Aerial view of the Maracanã lit at night"></div>
+      <div class="example">
+        <span class="eyebrow"><span data-l="pt">Exemplo</span><span data-l="en">Example</span></span>
+        <p><span data-l="pt">Um clube como o Flamengo pode criar o próprio programa semanal, um “FlaNews”, manter título e formato como IP próprio e licenciá-lo para uma emissora ou plataforma.</span><span data-l="en">A club like Flamengo could create its own weekly show, a “FlaNews”, keep the title and format as its own IP, and license it to a broadcaster or platform.</span></p>
+        <span></span>
+        <p class="aud-note" style="font-size:13px"><span data-l="pt">Exemplo ilustrativo. Não é um projeto existente nem indica relação com o clube.</span><span data-l="en">Illustrative example. Not an existing project and no relationship with the club is implied.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band-mist" id="para-quem" aria-labelledby="aud-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span data-l="pt">Para quem</span><span data-l="en">Who it’s for</span></p><h2 id="aud-title"><span data-l="pt">Um ativo, oito formas de ganhar com ele.</span><span data-l="en">One asset, eight ways to profit from it.</span></h2></div>
+      <p><span data-l="pt">Escolha o seu perfil para ver o que a Bridge entrega e por onde começar.</span><span data-l="en">Choose your profile to see what Bridge delivers and where to start.</span></p>
+    </div>
+    <div class="aud">
+      <div class="aud-list" role="tablist" aria-label="Perfis" data-aria-label-pt="Perfis" data-aria-label-en="Profiles">
+        <button type="button" role="tab" id="tab-investors" data-aud="investors" aria-selected="true" aria-controls="aud-panel"><small>01</small><b><span data-l="pt">Investidores</span><span data-l="en">Investors</span></b></button>
+        <button type="button" role="tab" id="tab-clubs" data-aud="clubs" aria-selected="false" aria-controls="aud-panel"><small>02</small><b><span data-l="pt">Clubes e federações</span><span data-l="en">Clubs &amp; federations</span></b></button>
+        <button type="button" role="tab" id="tab-athletes" data-aud="athletes" aria-selected="false" aria-controls="aud-panel"><small>03</small><b><span data-l="pt">Atletas</span><span data-l="en">Athletes</span></b></button>
+        <button type="button" role="tab" id="tab-agents" data-aud="agents" aria-selected="false" aria-controls="aud-panel"><small>04</small><b><span data-l="pt">Agentes e representantes</span><span data-l="en">Agents &amp; representatives</span></b></button>
+        <button type="button" role="tab" id="tab-brands" data-aud="brands" aria-selected="false" aria-controls="aud-panel"><small>05</small><b><span data-l="pt">Diretores de marketing</span><span data-l="en">Brand marketing leaders</span></b></button>
+        <button type="button" role="tab" id="tab-producers" data-aud="producers" aria-selected="false" aria-controls="aud-panel"><small>06</small><b><span data-l="pt">Produtoras</span><span data-l="en">Production companies</span></b></button>
+        <button type="button" role="tab" id="tab-media" data-aud="media" aria-selected="false" aria-controls="aud-panel"><small>07</small><b><span data-l="pt">Veículos de comunicação</span><span data-l="en">Broadcasters &amp; media</span></b></button>
+        <button type="button" role="tab" id="tab-streaming" data-aud="streaming" aria-selected="false" aria-controls="aud-panel"><small>08</small><b><span data-l="pt">Plataformas de streaming</span><span data-l="en">Streaming platforms</span></b></button>
+      </div>
+      <div class="aud-panel corner" id="aud-panel" role="tabpanel" aria-live="polite">
+        <p class="eyebrow" id="aud-kicker"></p>
+        <h3 id="aud-head"></h3>
+        <ul id="aud-points"></ul>
+        <div class="aud-meta">
+          <p class="mono"><span data-l="pt">Por onde começar</span><span data-l="en">Where to start</span>: <b id="aud-model"></b></p>
+          <a class="btn btn-gold" href="#contato" id="aud-cta"><span data-l="pt">Falar com a Bridge</span><span data-l="en">Talk to Bridge</span></a>
+        </div>
+        <p class="aud-note" id="aud-note" hidden></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pilares" aria-labelledby="pil-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span data-l="pt">Quatro frentes de negócio</span><span data-l="en">Four business pillars</span></p><h2 id="pil-title"><span data-l="pt">Onde a Bridge cria valor.</span><span data-l="en">Where Bridge creates value.</span></h2></div>
+      <p><span data-l="pt">Um processo único, da história ao valor: acesso, desenvolvimento editorial, produção, estratégia de IP e oportunidade comercial.</span><span data-l="en">One connected process, from story to value: access, editorial development, production, IP strategy and commercial opportunity.</span></p>
+    </div>
+    <div class="pillars">
+      <article class="pillar"><span class="k"><span data-l="pt">LENDAS E LEGADOS</span><span data-l="en">LEGENDS &amp; LEGACIES</span></span><h3><span data-l="pt">Carreiras que continuam rendendo</span><span data-l="en">Careers that keep paying off</span></h3><p><span data-l="pt">Documentários, biografias e projetos de legado de grandes nomes do esporte.</span><span data-l="en">Documentaries, biographies and legacy projects for major sporting names.</span></p><p class="tags"><span data-l="pt">Docuséries · Biografias · Acervo · Projetos do atleta</span><span data-l="en">Docuseries · Biographies · Archive · Athlete-owned</span></p></article>
+      <article class="pillar"><span class="k"><span data-l="pt">MOMENTOS DECISIVOS</span><span data-l="en">DEFINING MOMENTS</span></span><h3><span data-l="pt">Um evento, um portfólio</span><span data-l="en">One event, a portfolio</span></h3><p><span data-l="pt">Títulos, rivalidades e viradas transformados em documentário, série, podcast e campanhas.</span><span data-l="en">Titles, rivalries and comebacks turned into documentary, series, podcast and campaigns.</span></p><p class="tags"><span data-l="pt">Documentário · Série · Aniversários · Marca</span><span data-l="en">Documentary · Series · Anniversaries · Brand</span></p></article>
+      <article class="pillar"><span class="k"><span data-l="pt">ESTRATÉGIA PARA PLATAFORMAS</span><span data-l="en">PLATFORM STRATEGY</span></span><h3><span data-l="pt">O valor começa antes da encomenda</span><span data-l="en">Value starts before the commission</span></h3><p><span data-l="pt">Identificar a história, validar acesso e direitos, definir formato e caminho até a produção.</span><span data-l="en">Identify the story, validate access and rights, define format and the path to production.</span></p><p class="tags"><span data-l="pt">Desenvolvimento · Pitch · Acesso · Consultoria</span><span data-l="en">Development · Pitch · Access · Consulting</span></p></article>
+      <article class="pillar"><span class="k"><span data-l="pt">LEGADO SOB MEDIDA</span><span data-l="en">TAILORED LEGACY</span></span><h3><span data-l="pt">Uma estratégia por público e por venda</span><span data-l="en">A strategy per audience and per deal</span></h3><p><span data-l="pt">Sócios, fãs internacionais, patrocinadores e emissoras, cada um com seu produto.</span><span data-l="en">Members, international fans, sponsors and broadcasters, each with its own product.</span></p><p class="tags"><span data-l="pt">Acervo · Sócios · Patrocínio · Global</span><span data-l="en">Archive · Members · Sponsorship · Global</span></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cases" aria-labelledby="cases-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span data-l="pt">Trajetória comprovada</span><span data-l="en">Proven track record</span></p><h2 id="cases-title"><span data-l="pt">Formatos que já provaram audiência, prêmio e escala.</span><span data-l="en">Formats that already proved audience, awards and scale.</span></h2></div>
+      <p><span data-l="pt">Projetos criados, dirigidos ou produzidos pelo fundador, de séries digitais pioneiras a originais de streaming.</span><span data-l="en">Projects created, directed or produced by the founder, from pioneering digital series to streaming originals.</span></p>
+    </div>
+    <div class="bento">
+      <article class="case c-doze"><img src="assets/doze.jpg" alt="Dayyán Morandi com Marcelo no gramado do Santiago Bernabéu" data-alt-pt="Dayyán Morandi com Marcelo no gramado do Santiago Bernabéu" data-alt-en="Dayyán Morandi with Marcelo on the Santiago Bernabéu pitch"><p class="tag">DOZE · Marcelo · 2016</p><h3><span data-l="pt">A primeira série documental 100% digital do futebol, até onde se tem conhecimento.</span><span data-l="en">To our knowledge, football’s first 100% digital docuseries.</span></h3><p><span data-l="pt">Alcance viral, sem mídia paga. O formato virou referência para grandes produções esportivas.</span><span data-l="en">Viral reach with no paid media. The format became a reference for major sports productions.</span></p><div class="kpis"><div><b>18M+</b><span><span data-l="pt">espectadores</span><span data-l="en">viewers</span></span></div><div><b>150+</b><span><span data-l="pt">países</span><span data-l="en">countries</span></span></div><div><b>100%</b><span><span data-l="pt">orgânico</span><span data-l="en">organic</span></span></div></div></article>
+      <article class="case c-bravo"><img src="assets/bravo.jpg" alt="Jogadores do BRAVO! unindo as mãos" data-alt-pt="Jogadores do BRAVO! unindo as mãos" data-alt-en="BRAVO! players joining hands"><p class="tag">BRAVO! · ESPN + YouTube · LaLiga</p><h3><span data-l="pt">Um reality de talentos criado do zero.</span><span data-l="en">A talent reality format built from scratch.</span></h3><p><span data-l="pt">Mecânica de competição repetível, pronta para novas temporadas e mercados.</span><span data-l="en">Repeatable competition mechanics, ready for new seasons and markets.</span></p><div class="kpis"><div><b>10</b><span><span data-l="pt">episódios ESPN</span><span data-l="en">ESPN episodes</span></span></div><div><b>78</b><span><span data-l="pt">atletas</span><span data-l="en">players</span></span></div><div><b>200+</b><span><span data-l="pt">peças digitais</span><span data-l="en">digital assets</span></span></div></div></article>
+      <article class="case c-versus"><img src="assets/versus.jpg" alt="Vista aérea do Maracanã ao pôr do sol" data-alt-pt="Vista aérea do Maracanã ao pôr do sol" data-alt-en="Aerial view of the Maracanã at sunset"><p class="tag">VERSUS · DAZN Originals</p><h3><span data-l="pt">Premiado, mais visto e inédito no Brasil.</span><span data-l="en">Award-winning, most-watched, a first for Brazil.</span></h3><p><span data-l="pt">Primeira vez que uma emissora brasileira exibiu bastidores exclusivos da Copa Sul-Americana.</span><span data-l="en">First time a Brazilian broadcaster aired exclusive behind-the-scenes footage of the Copa Sudamericana.</span></p><div class="kpis"><div><b>CINEfoot</b><span><span data-l="pt">melhor curta</span><span data-l="en">best short</span></span></div><div><b>#1</b><span><span data-l="pt">DAZN fora do ao vivo</span><span data-l="en">DAZN outside live</span></span></div></div></article>
+      <article class="case c-copa"><img src="assets/worldcup.jpg" alt="Imprensa cercando jogadores da Seleção antes da Copa de 2018" data-alt-pt="Imprensa cercando jogadores da Seleção antes da Copa de 2018" data-alt-en="Press surrounding Brazil players before the 2018 World Cup"><p class="tag"><span data-l="pt">Copa do Mundo 2018 · Rússia</span><span data-l="en">2018 World Cup · Russia</span></p><h3><span data-l="pt">Marcelo e Willian, em tempo real.</span><span data-l="en">Marcelo and Willian, in real time.</span></h3><p><span data-l="pt">Bastidores publicados enquanto o maior evento do esporte acontecia, com equipe própria na Rússia.</span><span data-l="en">Backstage stories published while the world’s biggest sporting event unfolded, with our own team in Russia.</span></p><div class="kpis"><div><b>8</b><span><span data-l="pt">pessoas em campo</span><span data-l="en">people on location</span></span></div><div><b>2</b><span><span data-l="pt">atletas da Seleção</span><span data-l="en">Brazil internationals</span></span></div></div></article>
+      <article class="case c-antony"><img src="assets/antony.jpg" alt="Cinegrafista filmando no túnel do Real Betis" data-alt-pt="Cinegrafista filmando no túnel do Real Betis" data-alt-en="Camera operator filming in the Real Betis tunnel"><p class="tag">De Triana · Antony · Real Betis</p><h3><span data-l="pt">Uma transferência vira história.</span><span data-l="en">A transfer becomes a story.</span></h3><p><span data-l="pt">Acesso próximo ao protagonista durante a mudança. Direção, roteiro e edição do fundador, via 4Content.</span><span data-l="en">Close access to the protagonist through the move. Directed, written and edited by the founder, via 4Content.</span></p></article>
+      <article class="case c-cairo"><img src="assets/cairo.jpg" alt="Cairo Santos de costas em um estádio no Brasil" data-alt-pt="Cairo Santos de costas em um estádio no Brasil" data-alt-en="Cairo Santos seen from behind in a stadium in Brazil" style="object-position:50% 40%"><p class="tag">Cairo Santos · NFL</p><h3><span data-l="pt">Um brasileiro no esporte mais americano.</span><span data-l="en">A Brazilian in the most American of sports.</span></h3><p><span data-l="pt">A trajetória de um atleta brasileiro construindo carreira na NFL.</span><span data-l="en">The journey of a Brazilian athlete building a career in the NFL.</span></p></article>
+    </div>
+    <p class="cases-note"><span data-l="pt">Cases da trajetória do fundador, produzidos via Grupo LX, 4Content e parceiros. Clubes e competições citados não são apresentados como clientes.</span><span data-l="en">Cases from the founder’s track record, produced through Grupo LX, 4Content and partners. Clubs and competitions shown are not presented as clients.</span></p>
+  </div>
+</section>
+
+<section class="section" id="parceiros" aria-labelledby="wall-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span data-l="pt">Com quem já trabalhamos</span><span data-l="en">Who we’ve worked with</span></p><h2 id="wall-title"><span data-l="pt">Marcas, veículos e atletas.</span><span data-l="en">Brands, broadcasters and athletes.</span></h2></div>
+      <p><span data-l="pt">Projetos com algumas das maiores marcas e plataformas do esporte.</span><span data-l="en">Projects with some of the biggest brands and platforms in sport.</span></p>
+    </div>
+    <div class="wall">
+      <div><h3><span data-l="pt">Marcas e detentores de direitos</span><span data-l="en">Brands &amp; rights holders</span></h3><div class="tiles b"><span>F1 · GP São Paulo</span><span>FPF</span><span>LiveMode</span><span>LFU</span><span>Red Bull</span><span>Puma</span><span>Adidas</span><span>Asics</span><span>Oakley</span><span>New Era</span><span>Gatorade</span><span>Visa</span><span>Panini</span></div></div>
+      <div><h3><span data-l="pt">Veículos e plataformas</span><span data-l="en">Broadcasters &amp; platforms</span></h3><div class="tiles m"><span>ESPN</span><span>DAZN</span><span>YouTube</span><span>YouTube Space</span><span>CazéTV</span><span>Prime Video</span><span>Record</span></div></div>
+      <div class="athletes"><h3><span data-l="pt">Atletas</span><span data-l="en">Athletes</span></h3><p>Neymar Jr</p><p>Marcelo</p><p>Willian</p><p>Gabigol</p><p>Lucas Moura</p><p>Antony</p><p>Cafu</p><p>Rodolfo Vieira<small>UFC</small></p><p>Cairo Santos<small>NFL</small></p><p>Zé Roberto</p><p>Edmilson</p><p>Marcos Assunção</p><p>Juliano Belletti</p><p>Djalminha</p></div>
+      <p class="wall-note"><span data-l="pt">Seleção de marcas, veículos e atletas com quem o fundador trabalhou via Grupo LX, 4Content e empresas anteriores. A lista não indica relação atual nem endosso. Marcas citadas pertencem aos seus titulares.</span><span data-l="en">Selected brands, broadcasters and athletes the founder has worked with through Grupo LX, 4Content and earlier ventures. Listing implies no current relationship or endorsement. Trademarks belong to their owners.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="modelos" aria-labelledby="mod-title" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span data-l="pt">Como trabalhar com a Bridge</span><span data-l="en">How to work with Bridge</span></p><h2 id="mod-title"><span data-l="pt">Cinco modelos. Um primeiro passo simples.</span><span data-l="en">Five models. One simple first step.</span></h2></div>
+      <p><span data-l="pt">Os modelos podem ser combinados. Cada acordo depende do escopo, dos direitos disponíveis e dos termos comerciais.</span><span data-l="en">Models can be combined. Each agreement depends on scope, available rights and commercial terms.</span></p>
+    </div>
+    <div class="models-grid">
+      <div class="models">
+        <div class="model"><b>A</b><h3><span data-l="pt">Desenvolvimento de história</span><span data-l="en">Story development</span></h3><p><span data-l="pt">Pesquisa, conceito, formato e uma proposta de projeto crível.</span><span data-l="en">Research, concept, format and a credible project proposal.</span></p></div>
+        <div class="model"><b>B</b><h3><span data-l="pt">Produção completa</span><span data-l="en">End-to-end production</span></h3><p><span data-l="pt">Documentário, série, registro histórico ou projeto audiovisual, do roteiro à entrega.</span><span data-l="en">Documentary, series, historical record or audiovisual project, from script to delivery.</span></p></div>
+        <div class="model"><b>C</b><h3><span data-l="pt">Consultoria estratégica de conteúdo</span><span data-l="en">Strategic content consulting</span></h3><p><span data-l="pt">Para plataformas, emissoras e detentores de direitos que avaliam histórias e oportunidades.</span><span data-l="en">For platforms, broadcasters and rights holders evaluating stories and opportunities.</span></p></div>
+        <div class="model"><b>D</b><h3><span data-l="pt">Legado e acervo esportivo</span><span data-l="en">Sports legacy &amp; archive</span></h3><p><span data-l="pt">Para instituições que querem preservar e organizar sua história audiovisual.</span><span data-l="en">For institutions preserving and organizing their audiovisual history.</span></p></div>
+        <div class="model"><b>E</b><h3><span data-l="pt">Desenvolvimento e comercialização de IP</span><span data-l="en">IP development &amp; commercialization</span></h3><p><span data-l="pt">Projetos selecionados com direitos, governança e termos que sustentam exploração de longo prazo.</span><span data-l="en">Selected projects where rights, governance and terms support long-term exploitation.</span></p></div>
+      </div>
+      <div class="life">
+        <h3><span data-l="pt">O ciclo de vida de uma história esportiva</span><span data-l="en">The life cycle of a sports story</span></h3>
+        <div class="step"><div><b><span data-l="pt">Descobrir</span><span data-l="en">Discover</span></b><span><span data-l="pt">A história, o protagonista ou o momento.</span><span data-l="en">The story, protagonist or moment.</span></span></div></div>
+        <div class="step"><div><b><span data-l="pt">Desenvolver</span><span data-l="en">Develop</span></b><span><span data-l="pt">Narrativa, acesso e formato.</span><span data-l="en">Narrative, access and format.</span></span></div></div>
+        <div class="step"><div><b><span data-l="pt">Proteger</span><span data-l="en">Secure</span></b><span><span data-l="pt">Direitos, liberações e contratos.</span><span data-l="en">Rights, clearances and agreements.</span></span></div></div>
+        <div class="step"><div><b><span data-l="pt">Produzir</span><span data-l="en">Produce</span></b><span><span data-l="pt">Padrão editorial e de produção.</span><span data-l="en">Editorial and production standards.</span></span></div></div>
+        <div class="step"><div><b><span data-l="pt">Distribuir</span><span data-l="en">Distribute</span></b><span><span data-l="pt">Estratégia por público, janela e acordo.</span><span data-l="en">Strategy by audience, window and deal.</span></span></div></div>
+        <div class="step last"><div><b><span data-l="pt">Expandir</span><span data-l="en">Extend</span></b><span><span data-l="pt">Formatos, edições e licenciamento.</span><span data-l="en">Formats, editions and licensing.</span></span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fundador" aria-labelledby="fund-title" style="padding-top:0">
+  <div class="wrap founder">
+    <div class="founder-photo corner"><img src="assets/founder.jpg" alt="Retrato de Dayyán Morandi, fundador da Bridge Media Group" data-alt-pt="Retrato de Dayyán Morandi, fundador da Bridge Media Group" data-alt-en="Portrait of Dayyán Morandi, founder of Bridge Media Group"></div>
+    <div>
+      <p class="eyebrow"><span data-l="pt">Quem lidera</span><span data-l="en">Who leads</span></p>
+      <h2 id="fund-title"><span data-l="pt">Construída na prática, não na teoria.</span><span data-l="en">Built on practice, not theory.</span></h2>
+      <p><span data-l="pt">A Bridge Media Group é fundada por <strong>Dayyán Morandi</strong>, diretor criativo, produtor e empreendedor em mídia esportiva. Criou a metodologia CBS de produção em tempo real, aplicada pela primeira vez na DOZE, e dirigiu formatos para ESPN, DAZN e YouTube.</span><span data-l="en">Bridge Media Group is founded by <strong>Dayyán Morandi</strong>, creative director, producer and sports media entrepreneur. He created the CBS real-time production method, first applied on DOZE, and has directed formats for ESPN, DAZN and YouTube.</span></p>
+      <div class="timeline">
+        <div><small>2015–2023</small><b>Grupo LX<br><span data-l="pt">fundador</span><span data-l="en">founder</span></b></div>
+        <div><small>2024–</small><b>4Content<br><span data-l="pt">cofundador e diretor criativo</span><span data-l="en">co-founder, creative director</span></b></div>
+        <div><small><span data-l="pt">AGORA</span><span data-l="en">NOW</span></small><b>Bridge Media Group<br><span data-l="pt">fundador</span><span data-l="en">founder</span></b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contato" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div class="intro">
+      <p class="eyebrow"><span data-l="pt">Novos negócios</span><span data-l="en">New business</span></p>
+      <h2 id="contact-title"><span data-l="pt">Vamos estruturar o próximo ativo.</span><span data-l="en">Let’s build the next asset.</span></h2>
+      <p><span data-l="pt">Conte quem você é e o que tem em mãos: uma história, um acervo, um atleta, uma marca ou capital para investir.</span><span data-l="en">Tell us who you are and what you have: a story, an archive, an athlete, a brand or capital to invest.</span></p>
+      <ol class="next">
+        <li><span>01</span><div><b><span data-l="pt">Você envia o contexto</span><span data-l="en">You share the context</span></b><span data-l="pt">Perfil, objetivo e o que já existe.</span><span data-l="en">Profile, goal and what already exists.</span></div></li>
+        <li><span>02</span><div><b><span data-l="pt">Avaliamos encaixe e direitos</span><span data-l="en">We assess fit and rights</span></b><span data-l="pt">Potencial editorial, comercial e situação dos direitos.</span><span data-l="en">Editorial and commercial potential, and rights status.</span></div></li>
+        <li><span>03</span><div><b><span data-l="pt">Propomos o primeiro passo</span><span data-l="en">We propose the first step</span></b><span data-l="pt">Normalmente uma sessão de desenvolvimento.</span><span data-l="en">Usually a story development session.</span></div></li>
+      </ol>
+      <div class="direct">
+        <code id="mail">dayyan@bridgemediagroup.com.br</code>
+        <button type="button" id="copy-mail"><span data-l="pt">COPIAR</span><span data-l="en">COPY</span></button>
+      </div>
+    </div>
+
+    <form id="lead-form" novalidate>
+      <div class="field"><label for="f-name"><span data-l="pt">Nome</span><span data-l="en">Name</span> <i>*</i></label><input id="f-name" name="name" autocomplete="name" required><span class="msg"></span></div>
+      <div class="field"><label for="f-email"><span data-l="pt">E-mail profissional</span><span data-l="en">Work email</span> <i>*</i></label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="msg"></span></div>
+      <div class="field"><label for="f-company"><span data-l="pt">Empresa ou organização</span><span data-l="en">Company or organization</span> <i>*</i></label><input id="f-company" name="company" autocomplete="organization" required><span class="msg"></span></div>
+      <div class="field"><label for="f-role"><span data-l="pt">Cargo</span><span data-l="en">Job title</span></label><input id="f-role" name="role" autocomplete="organization-title"><span class="msg"></span></div>
+      <div class="field"><label for="f-profile"><span data-l="pt">Perfil</span><span data-l="en">Profile</span> <i>*</i></label>
+        <select id="f-profile" name="profile" required>
+          <option value="" data-pt="Selecione" data-en="Select">Selecione</option>
+          <option value="investors" data-pt="Investidor" data-en="Investor">Investidor</option>
+          <option value="clubs" data-pt="Clube ou federação" data-en="Club or federation">Clube ou federação</option>
+          <option value="athletes" data-pt="Atleta" data-en="Athlete">Atleta</option>
+          <option value="agents" data-pt="Agente ou representante de atleta" data-en="Agent or athlete representative">Agente ou representante de atleta</option>
+          <option value="brands" data-pt="Marca / marketing" data-en="Brand / marketing">Marca / marketing</option>
+          <option value="producers" data-pt="Produtora" data-en="Production company">Produtora</option>
+          <option value="media" data-pt="Veículo de comunicação" data-en="Broadcaster or media outlet">Veículo de comunicação</option>
+          <option value="streaming" data-pt="Plataforma de streaming" data-en="Streaming platform">Plataforma de streaming</option>
+          <option value="other" data-pt="Outro" data-en="Other">Outro</option>
+        </select><span class="msg"></span></div>
+      <div class="field"><label for="f-interest"><span data-l="pt">Interesse principal</span><span data-l="en">Main interest</span></label>
+        <select id="f-interest" name="interest">
+          <option value="" data-pt="Ainda não sei" data-en="Not sure yet">Ainda não sei</option>
+          <option value="A" data-pt="A · Desenvolvimento de história" data-en="A · Story development">A · Desenvolvimento de história</option>
+          <option value="B" data-pt="B · Produção completa" data-en="B · End-to-end production">B · Produção completa</option>
+          <option value="C" data-pt="C · Consultoria de conteúdo" data-en="C · Content consulting">C · Consultoria de conteúdo</option>
+          <option value="D" data-pt="D · Legado e acervo" data-en="D · Legacy &amp; archive">D · Legado e acervo</option>
+          <option value="E" data-pt="E · IP e licenciamento / investimento" data-en="E · IP, licensing / investment">E · IP e licenciamento / investimento</option>
+        </select></div>
+      <div class="field"><label for="f-country"><span data-l="pt">País</span><span data-l="en">Country</span></label><input id="f-country" name="country" autocomplete="country-name"></div>
+      <div class="field"><label for="f-phone"><span data-l="pt">Telefone ou WhatsApp</span><span data-l="en">Phone or WhatsApp</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="field full"><label for="f-message"><span data-l="pt">Conte sobre a oportunidade</span><span data-l="en">Tell us about the opportunity</span> <i>*</i></label><textarea id="f-message" name="message" required data-pt="Ex.: temos 40 anos de acervo e queremos um programa licenciável para emissoras." data-en="E.g.: we have 40 years of archive and want a licensable show for broadcasters."></textarea><span class="msg"></span></div>
+      <div class="hp" aria-hidden="true"><label for="f-hp">Website</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" name="consent"><span><span data-l="pt">Autorizo a Bridge Media Group a usar estes dados para responder ao meu contato, conforme a LGPD.</span><span data-l="en">I authorize Bridge Media Group to use this data to respond to my inquiry, under Brazil’s LGPD data protection law.</span></span></label>
+      <div class="form-foot">
+        <small><span data-l="pt">Os dados vão direto para a liderança da Bridge. Não compartilhamos com terceiros.</span><span data-l="en">Your details go straight to Bridge leadership. We don’t share them with third parties.</span></small>
+        <button class="btn btn-gold" type="submit" id="f-submit"><span data-l="pt">Enviar proposta</span><span data-l="en">Send inquiry</span> <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+      </div>
+      <div class="status ok" id="st-ok" hidden><b><span data-l="pt">Mensagem enviada.</span><span data-l="en">Message sent.</span></b><span><span data-l="pt">Recebemos seu contato e vamos responder pelo e-mail informado.</span><span data-l="en">We received your message and will reply to the email you provided.</span></span></div>
+      <div class="status fail" id="st-fail" hidden>
+        <b><span data-l="pt">Não foi possível enviar por aqui.</span><span data-l="en">We couldn’t send it from here.</span></b>
+        <span><span data-l="pt">Copie a mensagem abaixo e envie para dayyan@bridgemediagroup.com.br.</span><span data-l="en">Copy the message below and send it to dayyan@bridgemediagroup.com.br.</span></span>
+        <textarea id="st-text" readonly aria-label="Mensagem pronta para copiar" data-aria-label-pt="Mensagem pronta para copiar" data-aria-label-en="Message ready to copy"></textarea>
+        <div class="row"><button class="btn btn-line" type="button" id="st-copy"><span data-l="pt">Copiar mensagem</span><span data-l="en">Copy message</span></button></div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bridge Media Group">
+      <svg viewBox="6 6 108 108" aria-hidden="true"><path d="M104 51V80A24 24 0 0 1 80 104H40A24 24 0 0 1 16 80V40A24 24 0 0 1 40 16H69" fill="none" stroke="#F4F5F7" stroke-width="20"/><path d="M78 16H80A24 24 0 0 1 104 40V42" fill="none" stroke="#B8975A" stroke-width="20"/></svg>
+      <span>BRIDGE MEDIA GROUP</span>
+    </a>
+    <p><span data-l="pt">© 2026 Bridge Media Group · São Paulo, Brasil. Esta página apresenta a empresa e sua trajetória e não constitui oferta de valores mobiliários. Fotos de produção: acervo do fundador.</span><span data-l="en">© 2026 Bridge Media Group · São Paulo, Brazil. This page presents the company and its track record and is not an offer of securities. Production photos: founder’s archive.</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ENDPOINT = "https://formsubmit.co/ajax/dayyan@bridgemediagroup.com.br";
+  var root = document.documentElement;
+
+  /* ---------- language ---------- */
+  function setLang(l){
+    root.setAttribute("data-lang", l); root.setAttribute("lang", l === "pt" ? "pt-BR" : "en");
+    document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.set === l)); });
+    document.querySelectorAll("[data-pt][data-en]").forEach(function(el){
+      var v = el.getAttribute("data-" + l);
+      if (el.tagName === "OPTION") el.textContent = v; else el.setAttribute("placeholder", v);
+    });
+    ["aria-label","alt"].forEach(function(a){ document.querySelectorAll("[data-" + a + "-" + l + "]").forEach(function(el){ el.setAttribute(a, el.getAttribute("data-" + a + "-" + l)); }); });
+    try { localStorage.setItem("bmg-lang", l); } catch(e){}
+    renderAud(current);
+  }
+  var saved = null; try { saved = localStorage.getItem("bmg-lang"); } catch(e){}
+  var initial = saved || ((navigator.language || "pt").toLowerCase().indexOf("pt") === 0 ? "pt" : "en");
+  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.set); }); });
+  function L(){ return root.getAttribute("data-lang") || "pt"; }
+
+  /* ---------- audience selector ---------- */
+  var AUD = {
+    investors:{k:["Investidores","Investors"],h:["Exposição a um portfólio de IP esportivo, com receita de licenciamento, formatos e produção.","Exposure to a sports IP portfolio, with revenue from licensing, formats and production."],p:[["Portfólio de formatos e séries com potencial de licenciamento internacional","A slate of formats and series with international licensing potential"],["Governança de direitos desde o desenvolvimento, não depois da produção","Rights governance from development, not after production"],["Co-investimento por projeto ou por portfólio, com teses claras","Co-investment per project or across a portfolio, with clear theses"]],m:["E · Desenvolvimento e comercialização de IP","E · IP development & commercialization"],n:["Conversa exploratória. Esta página não é oferta de valores mobiliários e não promete retorno.","Exploratory conversation. This page is not an offer of securities and promises no returns."]},
+    clubs:{k:["Clubes e federações","Clubs & federations"],h:["Seu acervo e o dia a dia de vitórias como produtos licenciáveis.","Your archive and the daily life of winning as licensable products."],p:[["Programas próprios do clube, licenciados para emissoras e plataformas","Club-owned shows, licensed to broadcasters and platforms"],["Documentários de títulos, ídolos e datas históricas","Documentaries on titles, idols and landmark dates"],["Estratégia de acervo e legado com produtos para sócios e fãs no exterior","Archive and legacy strategy with products for members and fans abroad"]],m:["D + E · Legado e IP","D + E · Legacy and IP"]},
+    athletes:{k:["Atletas","Athletes"],h:["Sua história como um ativo que continua rendendo depois da carreira.","Your story as an asset that keeps paying after your career."],p:[["Documentários e séries sobre a sua trajetória","Documentaries and series about your journey"],["Canais próprios, como fizemos com Marcelo na DOZE","Athlete-owned channels, as we did with Marcelo on DOZE"],["Projetos de legado com família, gestores e representantes","Legacy projects with family, managers and representatives"]],m:["A + B · Desenvolvimento e produção","A + B · Development and production"]},
+    agents:{k:["Agentes e representantes","Agents & representatives"],h:["Mais valor de imagem para os seus atletas, em cada momento da carreira.","More image value for your athletes, at every stage of their career."],p:[["Transferências que viram histórias, como De Triana com Antony","Transfers that become stories, like De Triana with Antony"],["Conteúdo que fortalece negociações e patrocínios","Content that strengthens negotiations and sponsorships"],["Cronograma de produção alinhado à agenda do atleta","Production schedules built around the athlete’s calendar"]],m:["A + B · Desenvolvimento e produção","A + B · Development and production"]},
+    brands:{k:["Diretores de marketing","Brand marketing leaders"],h:["Storytelling esportivo com propriedade da marca, além da mídia comprada.","Sports storytelling the brand owns, beyond bought media."],p:[["Formatos originais com integração natural da marca","Original formats with natural brand integration"],["Conteúdo com atletas, clubes e grandes eventos","Content with athletes, clubs and major events"],["Ativos com vida longa no digital, não só uma campanha","Assets with a long digital life, not just one campaign"]],m:["B + C · Produção e consultoria","B + C · Production and consulting"]},
+    producers:{k:["Produtoras","Production companies"],h:["Desenvolvimento editorial e acesso para produções de grande porte.","Editorial development and access for large-scale productions."],p:[["Coprodução e desenvolvimento de formatos","Co-production and format development"],["Acesso a atletas, clubes e acervos","Access to athletes, clubs and archives"],["Operação de set comprovada em escala: 91 profissionais e 13 câmeras no BRAVO!","Set operations proven at scale: 91 crew and 13 cameras on BRAVO!"]],m:["B + C · Produção e consultoria","B + C · Production and consulting"]},
+    media:{k:["Veículos de comunicação","Broadcasters & media"],h:["Formatos originais e programas prontos para licenciar.","Original formats and shows ready to license."],p:[["Formatos com mecânica repetível, como o BRAVO! na ESPN","Formats with repeatable mechanics, like BRAVO! on ESPN"],["Programas de clubes e atletas para licenciamento","Club and athlete shows available for licensing"],["Bastidores exclusivos de competições","Exclusive behind-the-scenes access to competitions"]],m:["C + E · Consultoria e IP","C + E · Consulting and IP"]},
+    streaming:{k:["Plataformas de streaming","Streaming platforms"],h:["Um slate original com identidade editorial e audiência comprovada.","An original slate with editorial identity and proven audience."],p:[["Originals como VERSUS, premiado no CINEfoot e destaque de audiência na DAZN","Originals like VERSUS, a CINEfoot winner and an audience leader on DAZN"],["Docuséries com atletas de alcance global","Docuseries with globally known athletes"],["Desenvolvimento antes da encomenda, com direitos validados","Development before the commission, with rights validated"]],m:["A + C · Desenvolvimento e consultoria","A + C · Development and consulting"]}
+  };
+  var current = "investors";
+  function idx(){ return L() === "pt" ? 0 : 1; }
+  function renderAud(key){
+    current = key; var d = AUD[key], i = idx();
+    document.getElementById("aud-kicker").textContent = d.k[i];
+    document.getElementById("aud-head").textContent = d.h[i];
+    var ul = document.getElementById("aud-points"); ul.innerHTML = "";
+    d.p.forEach(function(pair){ var li = document.createElement("li"); li.textContent = pair[i]; ul.appendChild(li); });
+    document.getElementById("aud-model").textContent = d.m[i];
+    var note = document.getElementById("aud-note");
+    if (d.n){ note.textContent = d.n[i]; note.hidden = false; } else { note.hidden = true; }
+    document.querySelectorAll(".aud-list button").forEach(function(b){ var on = b.dataset.aud === key; b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1; });
+  }
+  document.querySelectorAll(".aud-list button").forEach(function(b){ b.addEventListener("click", function(){ renderAud(b.dataset.aud); }); });
+  document.querySelector(".aud-list").addEventListener("keydown", function(e){
+    var keys = Object.keys(AUD), n = keys.indexOf(current);
+    if (e.key === "ArrowRight" || e.key === "ArrowDown"){ n = (n + 1) % keys.length; }
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp"){ n = (n - 1 + keys.length) % keys.length; }
+    else return;
+    e.preventDefault(); renderAud(keys[n]); document.getElementById("tab-" + keys[n]).focus();
+  });
+  document.querySelectorAll(".audience-chips a").forEach(function(a){ a.addEventListener("click", function(){ renderAud(a.dataset.aud); }); });
+  document.getElementById("aud-cta").addEventListener("click", function(){ document.getElementById("f-profile").value = current; });
+
+  /* ---------- copy helpers ---------- */
+  function copy(text, btn, fallbackEl){
+    var done = function(){ var t = btn.textContent; btn.textContent = L() === "pt" ? "COPIADO" : "COPIED"; setTimeout(function(){ btn.textContent = t; }, 1600); };
+    var sel = function(){ if (fallbackEl){ if (fallbackEl.select) fallbackEl.select(); else { var r = document.createRange(); r.selectNodeContents(fallbackEl); var s = getSelection(); s.removeAllRanges(); s.addRange(r); } } };
+    try { navigator.clipboard.writeText(text).then(done, sel); } catch(e){ sel(); }
+  }
+  document.getElementById("copy-mail").addEventListener("click", function(e){ copy("dayyan@bridgemediagroup.com.br", e.currentTarget, document.getElementById("mail")); });
+  document.getElementById("st-copy").addEventListener("click", function(e){ var ta = document.getElementById("st-text"); copy(ta.value, e.currentTarget, ta); });
+
+  /* ---------- form ---------- */
+  var form = document.getElementById("lead-form");
+  var MSG = { req:["Campo obrigatório.","This field is required."], mail:["Informe um e-mail válido.","Enter a valid email address."], consent:["É preciso autorizar o uso dos dados para enviarmos a resposta.","Please authorize data use so we can reply."] };
+  function setErr(id, key){
+    var el = document.getElementById(id), f = el.closest(".field"); if (!f) return;
+    f.classList.toggle("err", !!key); f.querySelector(".msg").textContent = key ? MSG[key][idx()] : "";
+    el.setAttribute("aria-invalid", key ? "true" : "false");
+  }
+  function validate(){
+    var ok = true, first = null;
+    ["f-name","f-company","f-profile","f-message"].forEach(function(id){ var v = document.getElementById(id).value.trim(); if (!v){ setErr(id,"req"); ok = false; first = first || id; } else setErr(id, null); });
+    var em = document.getElementById("f-email").value.trim();
+    if (!em){ setErr("f-email","req"); ok = false; first = first || "f-email"; }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ setErr("f-email","mail"); ok = false; first = first || "f-email"; }
+    else setErr("f-email", null);
+    var c = document.getElementById("f-consent"), cl = c.closest(".consent");
+    if (!c.checked){ cl.classList.add("err"); ok = false; first = first || "f-consent"; } else cl.classList.remove("err");
+    if (first) document.getElementById(first).focus();
+    return ok;
+  }
+  function optText(id){ var s = document.getElementById(id); return s.value ? s.options[s.selectedIndex].textContent : "—"; }
+  function payload(){
+    var g = function(id){ return document.getElementById(id).value.trim(); };
+    return {
+      "_subject": "Novo lead · Bridge Media Group · " + optText("f-profile") + " · " + g("f-company"),
+      "_template": "table", "_captcha": "false", "_replyto": g("f-email"), "_honey": g("f-hp"),
+      "Nome": g("f-name"), "email": g("f-email"), "Empresa": g("f-company"), "Cargo": g("f-role") || "—",
+      "Perfil": optText("f-profile"), "Interesse": optText("f-interest"), "País": g("f-country") || "—",
+      "Telefone": g("f-phone") || "—", "Mensagem": g("f-message"), "Idioma da página": L().toUpperCase(),
+      "Consentimento LGPD": "Sim"
+    };
+  }
+  function plain(p){ return Object.keys(p).filter(function(k){ return k.charAt(0) !== "_"; }).map(function(k){ return k + ": " + p[k]; }).join("\n"); }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("st-ok").hidden = true; document.getElementById("st-fail").hidden = true;
+    if (!validate()) return;
+    var p = payload(); if (p._honey) return;
+    var btn = document.getElementById("f-submit"); btn.disabled = true;
+    fetch(ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body: JSON.stringify(p) })
+      .then(function(r){ return r.json().then(function(j){ if (!r.ok || String(j.success) === "false") throw new Error(j.message || "fail"); }); })
+      .then(function(){ form.querySelectorAll("input:not([type=checkbox]),textarea").forEach(function(el){ if (el.id !== "st-text") el.value = ""; }); form.querySelectorAll("select").forEach(function(s){ s.selectedIndex = 0; }); document.getElementById("f-consent").checked = false; document.getElementById("st-ok").hidden = false; })
+      .catch(function(){ document.getElementById("st-text").value = "Para: dayyan@bridgemediagroup.com.br\nAssunto: " + p._subject + "\n\n" + plain(p); document.getElementById("st-fail").hidden = false; })
+      .then(function(){ btn.disabled = false; });
+  });
+
+  setLang(initial);
+  renderAud("investors");
+})();
+</script>
+
+</body>
+</html>
